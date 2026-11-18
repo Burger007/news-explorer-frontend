@@ -1,4 +1,5 @@
 import "./Main.css";
+import SearchForm from "../SearchForm/SearchForm";
 
 function Main() {
   return (
@@ -9,6 +10,7 @@ function Main() {
           Find the latest news on any topic and save them in your personal
           account.
         </p>
+        <SearchForm />
       </section>
     </main>
   );
