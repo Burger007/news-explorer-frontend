@@ -22,8 +22,12 @@ function Header({ isLoggedIn, onSignInClick, onSignOut }) {
   }
 
   return (
-    <header className={`header ${isSavedNewsPage ? "header_theme_light" : ""}`}>
-      <Link className="header__logo" to="/">
+    <header
+      className={`header ${isSavedNewsPage ? "header_theme_light" : ""} ${
+        isMenuOpen ? "header_menu-open" : ""
+      }`}
+    >
+      <Link className="header__logo" to="/" onClick={closeMenu}>
         NewsExplorer
       </Link>
       <Navigation

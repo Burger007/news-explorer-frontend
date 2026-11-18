@@ -25,8 +25,9 @@ function Navigation({
     <nav className="navigation">
       <button
         type="button"
-        className={`navigation__menu-button navigation__menu-button${themeModifier} ${isMenuOpen ? "navigation__menu-button_opened" : ""}`}
+        className={`navigation__menu-button navigation__menu-button${themeModifier} ${isMenuOpen ? "navigation__menu-button_open" : ""}`}
         onClick={onMenuToggle}
+        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
       />
       <ul
         className={`navigation__list ${isMenuOpen ? "navigation__list_open" : ""}`}
