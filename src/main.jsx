@@ -1,16 +1,17 @@
 import "./vendor/normalize.css";
 import "./vendor/fonts.css";
 import "./index.css";
-
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {BrowserRouter} from 'react-router-dom';
 import App from './components/App/App';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
