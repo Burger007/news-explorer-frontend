@@ -5,6 +5,8 @@ import Main from "../Main/Main";
 import SavedNews from "../SavedNews/SavedNews";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
+import Header from "../Header/Header";
+
 function App() {
   const [isLoggedIn] = React.useState(false);
   const [currentUser] = React.useState({});
@@ -12,6 +14,7 @@ function App() {
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
+        <Header />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route
