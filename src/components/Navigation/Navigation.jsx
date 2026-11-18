@@ -3,7 +3,15 @@ import { NavLink } from "react-router-dom";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import "./Navigation.css";
 
-function Navigation({ isLoggedIn, isLightTheme, onSignInClick, onSignOut }) {
+function Navigation({
+  isLoggedIn,
+  onSignOut,
+  isLightTheme,
+  onSignInClick,
+  isMenuOpen,
+  onMenuToggle,
+  onLinkClick,
+}) {
   const currentUser = useContext(CurrentUserContext);
   const themeModifier = isLightTheme ? "_theme_light" : "";
 
@@ -15,16 +23,32 @@ function Navigation({ isLoggedIn, isLightTheme, onSignInClick, onSignOut }) {
 
   return (
     <nav className="navigation">
-      <ul className="navigation__list">
+      <button
+        type="button"
+        className={`navigation__menu-button navigation__menu-button${themeModifier} ${isMenuOpen ? "navigation__menu-button_opened" : ""}`}
+        onClick={onMenuToggle}
+      />
+      <ul
+        className={`navigation__list ${isMenuOpen ? "navigation__list_open" : ""}`}
+      >
         <li className="navigation__item">
-          <NavLink to="/" end className={getLinkClassName}>
+          <NavLink
+            to="/"
+            end
+            className={getLinkClassName}
+            onClick={onLinkClick}
+          >
             Home
           </NavLink>
         </li>
 
         {isLoggedIn && (
           <li className="navigation__item">
-            <NavLink to="/saved-news" className={getLinkClassName}>
+            <NavLink
+              to="/saved-news"
+              className={getLinkClassName}
+              onClick={onLinkClick}
+            >
               Saved articles
             </NavLink>
           </li>
@@ -52,6 +76,9 @@ function Navigation({ isLoggedIn, isLightTheme, onSignInClick, onSignOut }) {
           )}
         </li>
       </ul>
+      {isMenuOpen && (
+        <div className="navigation__overlay" onClick={onMenuToggle} />
+      )}
     </nav>
   );
 }
