@@ -23,10 +23,11 @@ function About() {
           into building products that people actually enjoy using.
         </p>
         <p className="about__text">
-          At TripleTen I learned to build full web apps (layouts, React
-          components, APIs, deployment etc). My time in technical support, to
+          At TripleTen I learned to build full web apps: layouts, React
+          components, APIs and deployment. My time in technical support and as a
+          systems champion taught me to think from the user's perspective, to
           get to the root of a problem quickly and to explain technical things
-          in a way that makes sense. That's all gone into building products that
+          in a way that makes sense. That's what I bring to building products
           people actually enjoy using.
         </p>
       </div>
