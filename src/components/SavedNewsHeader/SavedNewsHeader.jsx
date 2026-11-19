@@ -8,10 +8,10 @@ function SavedNewsHeader({ savedArticles }) {
   const count = savedArticles.length;
 
   return (
-    <section className="saved-news=header">
+    <section className="saved-news-header">
       <p className="saved-news-header__label">Saved articles</p>
       <h1 className="saved-news-header__title">
-        {currentUser.name}, you have{count} saved articles
+        {currentUser.name}, you have {count} saved article
         {count === 1 ? "" : "s"}
       </h1>
       {count > 0 && (
