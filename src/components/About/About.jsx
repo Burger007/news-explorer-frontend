@@ -12,12 +12,22 @@ function About() {
       <div className="about__info">
         <h2 className="about__title">About the author</h2>
         <p className="about__text">
-          Write 2-3 sentences about yourself: your name, what you do, and which
-          technologies you work with.
+          Hi, I'm Max Everheart. I'm a fullstack developer. My stack is JS,
+          React, Node.js and REST APIs. I like to take a design and build it out
+          into a clean responsive interface that works equally well on a phone
+          as it does on a big screen. At TripleTen I learned to build full web
+          apps (layouts, React components, APIs, deployment etc). My time in
+          technical support and as a systems champion taught me to think from
+          the user's perspective, to get to the root of a problem quickly and to
+          explain technical things in a way that makes sense. That's all gone
+          into building products that people actually enjoy using.
         </p>
         <p className="about__text">
-          Then add what you learned at TripleTen and how you can help potential
-          customers or employers.
+          At TripleTen I learned to build full web apps (layouts, React
+          components, APIs, deployment etc). My time in technical support, to
+          get to the root of a problem quickly and to explain technical things
+          in a way that makes sense. That's all gone into building products that
+          people actually enjoy using.
         </p>
       </div>
     </section>
