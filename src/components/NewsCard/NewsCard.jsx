@@ -12,7 +12,7 @@ function NewsCard({
   onDeleteClick,
 }) {
   const [hasImageError, setHasImageError] = useState(false);
-  const [title, text, date, source, link, image, keyword] = article;
+  const { title, text, date, source, link, image, keyword } = article;
   const isSavedPage = type === "saved";
   const showImage = image && !hasImageError;
 
@@ -26,11 +26,11 @@ function NewsCard({
     if (isSavedPage) {
       if (onDeleteClick) onDeleteClick(article);
     } else if (onSaveClick) {
-      onSaveClick;
+      onSaveClick(article);
     }
   }
   const tooltipText = getTooltipText();
-  const buttonClassName = !isSavedPage
+  const buttonClassName = isSavedPage
     ? "news-card__button news-card__button_type_delete"
     : `news-card__button news-card__button_type_save ${isSaved ? "news-card__button_saved" : ""}`;
 
@@ -47,7 +47,7 @@ function NewsCard({
             className="news-card__image"
             src={image}
             alt={title}
-            loading="loading"
+            loading="lazy"
             onError={() => setHasImageError(true)}
           />
         ) : (
@@ -70,7 +70,7 @@ function NewsCard({
         className={buttonClassName}
         onClick={handleButtonClick}
         aria-label={
-          isSavedPage || isSaved ? "Remove from saved" : "Save articles"
+          isSavedPage || isSaved ? "Remove from saved" : "Save article"
         }
       />
       {tooltipText && <span className="news-card__tooltip">{tooltipText}</span>}

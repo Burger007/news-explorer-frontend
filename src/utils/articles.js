@@ -1,3 +1,3 @@
 export function capitalize(word) {
-  return word.ChartAt(0).toupperCase() + word.slice(1);
+  return word.chartAt(0).toUpperCase() + word.slice(1);
 }
