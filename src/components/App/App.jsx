@@ -4,6 +4,7 @@ import CurrentUserContext from "../../contexts/CurrentUserContext";
 import Main from "../Main/Main";
 import SavedNews from "../SavedNews/SavedNews";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import Footer from "../Footer/Footer";
 
 import Header from "../Header/Header";
 
@@ -26,6 +27,7 @@ function App() {
             }
           />
         </Routes>
+        <Footer />
       </div>
     </CurrentUserContext.Provider>
   );
