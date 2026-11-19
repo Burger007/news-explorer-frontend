@@ -51,6 +51,7 @@
   font-weight: 400;
   line-height: 30px;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 
@@ -61,6 +62,7 @@
   font-size: 16px;
   line-height: 22px;
   -webkit-line-clamp: 4;
+  line-clamp: 4;
   -webkit-box-orient: vertical;
 }
 
@@ -170,6 +172,7 @@
 
   .news-card__text {
     -webkit-line-clamp: 3;
+    line-clamp: 3;
   }
 
   .news-card__keyword {
@@ -199,6 +202,7 @@
 
   .news-card__title {
     -webkit-line-clamp: 2;
+    line-clamp: 2;
   }
 
   .news-card__keyword {
