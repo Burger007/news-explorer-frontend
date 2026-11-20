@@ -9,6 +9,9 @@ import Header from "../Header/Header";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import SuccessModal from "../SuccessModal/SuccessModal";
+import { searchNews } from "../../utils/newsApi";
+import { normalizeArticles } from "../../utils/articles";
+import { CARDS_PER_STEP, SEARCH_ERROR_MESSAGE } from "../../utils/constants";
 
 function App() {
   const [isLoggedIn] = React.useState(false);
@@ -16,6 +19,11 @@ function App() {
 
   const [activeModal, setActiveModal] = React.useState("");
   const [formError, setFormError] = React.useState("");
+  const [articles, setArticles] = React.useState([]);
+  const [visibleCount, setVisibleCount] = React.useState(CARDS_PER_STEP);
+  const [isSearching, setIsSearching] = React.useState(false);
+  const [hasSearched, setHasSearched] = React.useState(false);
+  const [searchError, setSearchError] = React.useState("");
 
   const closeModal = useCallback(() => {
     setActiveModal("");
@@ -35,6 +43,23 @@ function App() {
     openModal("success");
   }
 
+  function handleSearch(keyword) {
+    setHasSearched(true);
+    setIsSearching(true);
+    setSearchError("");
+    setArticles([]);
+    setVisibleCount(CARDS_PER_STEP);
+
+    searchNews(keyword)
+      .then((data) => setArticles(normalizeArticles(data.articles, keyword)))
+      .catch(() => setSearchError(SEARCH_ERROR_MESSAGE))
+      .finally(() => setIsSearching(false));
+  }
+
+  function handleShowMore() {
+    setVisibleCount((count) => count + CARDS_PER_STEP);
+  }
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
@@ -43,7 +68,21 @@ function App() {
           onSignInClick={() => openModal("login")}
         />
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route
+            path="/"
+            element={
+              <Main
+                onSearch={handleSearch}
+                isSearching={isSearching}
+                hasSearched={hasSearched}
+                searchError={searchError}
+                articles={articles}
+                visibleCount={visibleCount}
+                onShowMore={handleShowMore}
+                isLoggedIn={isLoggedIn}
+              />
+            }
+          />
           <Route
             path="/saved-news"
             element={

@@ -1,8 +1,18 @@
 import "./Main.css";
 import SearchForm from "../SearchForm/SearchForm";
+import SearchResults from "../SearchResults/SearchResults";
 import About from "../About/About";
 
-function Main() {
+function Main({
+  onSearch,
+  isSearching,
+  hasSearched,
+  searchError,
+  articles,
+  visibleCount,
+  onShowMore,
+  isLoggedIn,
+}) {
   return (
     <main className="main">
       <section className="main__hero">
@@ -11,8 +21,17 @@ function Main() {
           Find the latest news on any topic and save them in your personal
           account.
         </p>
-        <SearchForm />
+        <SearchForm onSearch={onSearch} isSearching={isSearching} />
       </section>
+      <SearchResults
+        isSearching={isSearching}
+        hasSearched={hasSearched}
+        error={searchError}
+        articles={articles}
+        visibleCount={visibleCount}
+        onShowMore={onShowMore}
+        isLoggedIn={isLoggedIn}
+      />
       <About />
     </main>
   );
