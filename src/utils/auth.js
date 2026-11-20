@@ -8,7 +8,7 @@ export function register(email, password, name) {
   if (!email || !password || !name) {
     return Promise.reject(new Error("Missing fields"));
   }
-  return Promise.resolve({ date: { _id: STUB_USER._id, email, name } });
+  return Promise.resolve({ data: { _id: STUB_USER._id, email, name } });
 }
 
 export function authorize(email, password) {
