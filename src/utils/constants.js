@@ -12,3 +12,9 @@ export const SEARCH_ERROR_MESSAGE =
   "Sorry, something went wrong during the request. Please try again later.";
 
 export const EMPTY_KEYWORD_MESSAGE = "Please enter a keyword";
+
+export const TOKEN_KEY = "jwt";
+export const SAVED_ARTICLES_KEY = "savedArticles";
+
+export const LOGIN_ERROR_MESSAGE = "Incorrect email or password";
+export const REGISTER_ERROR_MESSAGE = "This email is not available";

@@ -12,6 +12,8 @@ function Main({
   visibleCount,
   onShowMore,
   isLoggedIn,
+  savedArticles,
+  onSaveClick,
 }) {
   return (
     <main className="main">
@@ -31,6 +33,8 @@ function Main({
         visibleCount={visibleCount}
         onShowMore={onShowMore}
         isLoggedIn={isLoggedIn}
+        savedArticles={savedArticles}
+        onSaveClick={onSaveClick}
       />
       <About />
     </main>
