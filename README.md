@@ -1,16 +1,26 @@
-# React + Vite
+# News Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A news search app: search any topic, read the results and save articles to your account.
 
-Currently, two official plugins are available:
+**Live site:** https://burger007.github.io/news-explorer-frontend/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Search news from the past 7 days (News API), 3 cards at a time with "Show more"
+- Sign up / sign in popups with live form validation
+- Save and delete articles; saved articles page grouped by keywords
+- Protected saved-articles route
+- Responsive from 320px to 1440px
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech
 
-## Expanding the ESLint configuration
+React, Vite, React Router, BEM CSS, GitHub Pages
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Note
+
+This stage uses a backend: any email and password will sign you in, and saved articles are kept in the browser (localStorage).
+
+## Run locally
+
+npm install
+npm run dev
